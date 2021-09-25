@@ -1,35 +1,11 @@
-* {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-}
-
-body {
-    background-color: #121212;
-}
-
-.card {
-    margin: 2rem auto;
-    max-width: 680px;
-    padding: 3rem 3rem 3rem 6rem;
-    background-color: #212121;
-    border-radius: 5px;
-    /* border: 1px solid #999999; */
-    /* box-shadow: 0px 0px 1px; */
-}
 
 .info {
     display: flex;
-    /* padding: 1rem; */
     justify-content: space-between;
-    /* flex-wrap: wrap; */
 }
 
 .info div {
     padding: .6rem;
-}
-
-.rating {
-    display: flex;
 }
 
 .stars {
@@ -38,10 +14,7 @@ body {
 
 .stars img {
     height: 1.5rem;
-}
-
-.number {
-    font-size: 2.2rem;
+    padding: 3px;
 }
 
 .buttonContainer {
@@ -53,6 +26,7 @@ body {
     padding: .8rem;
     background-color: #424242;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .divider {
@@ -65,44 +39,100 @@ body {
 
 .reviewStars img{
     height: 1.2rem;
+    padding: 2px;
 }
 
 .review {
-    /* display: flex; */
-    /* grid-template-columns: 10; */
     border-bottom: 1px solid #424242;
 }
 
-.review div {
-}
-
 .reviewRating {
-    /* grid-column: 1 / 5; */
     display: flex;
     width: 100%;
 }
 
 .reviewRating div {
-    padding: .8rem;
+    padding: 1.2rem;
 }
 
 .reviewText {
     padding: 0 .8rem .8rem 1.5rem;
     line-height: 1.5rem;
-    /* padding: 0 2rem; */
 }
 
 .reviewNumber {
     font-size: 1.5rem;
 }
 
+.modal {
+    background-color: #424242 !important;
+}
+
+/* start of review stars functionality */
+.userRatingStars {
+    cursor: pointer;
+    display: flex;
+}
+
+/* stars are by default slightly grayed out, then ... */
+.userRatingStars img {
+    height: 2rem;
+    filter: grayscale(80%);
+    padding: 5px;
+}
+
+/* on hover, make all of them full color, then ... */
+.userRatingStars:hover img {
+    filter: grayscale(0%);
+}
+
+/* all stars after (~) the hovered star should be grayed out */
+.userRatingStars img:hover ~ img {
+    filter: grayscale(80%);
+}
+
+/* class for when a user clicks a star, they stay active */
+.active {
+    filter: grayscale(0%) !important;
+}
+/* end of review stars functionality */
+
+.error {
+    padding: .5rem;
+    margin: .5rem 0;
+    background-color: #ffc3c3;
+    border: red 2px solid;
+    border-radius: 5px;
+    color: black;
+}
+
+.dontShow {
+    display: none;
+}
+
+.userRatingContent {
+    padding: 0 1rem;
+}
+
+.userRatingHeader {
+    border-bottom: 1px solid #797979;
+}
+
+.userReview textarea {
+    color: black;
+    width: 70%;
+    height: 3rem;
+}
+
+.submit {
+    color: black;
+    padding: 5px; 
+    margin: .8rem 0;
+}
+
 @media only screen and (max-width: 600px) {
     .card {
         padding: 1rem;
-    }
-
-    .number {
-        font-size: 1.8rem;
     }
     
     .info div{
@@ -111,5 +141,13 @@ body {
 
     .info {
         margin-bottom: 1rem;
+    }
+
+    .userRatingContent {
+        padding: 0;
+    }
+
+    .userReview textarea {
+        width: 90%;
     }
   }

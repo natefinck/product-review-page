@@ -1,94 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="card">
-        <div class="title">
-            <h1>The Beginners Guide to Bitcoin</h1>
-        </div>
-        <div class="info">
-            <div class="rating">
-                <div class="stars">
-                    <img src="../img/star-yes.svg" alt="">
-                    <img src="../img/star-yes.svg" alt="">
-                    <img src="../img/star-yes.svg" alt="">
-                    <img src="../img/star-yes.svg" alt="">
-                    <img src="../img/star-no.svg" alt="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div class="card">
+            <div class="productContainer">
+                <div class="title" id="title">
                 </div>
-                <div class="number">
-                    4
-                </div>
-            </div>
-            <div class="buttonContainer">
-                <button>Add Review</button>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="reviewsContainer">
-            <h3>Reviews</h3>
-            <div class="reviews">
-                <div class="review">
-                    <div class="reviewRating">
-                        <div class="reviewStars">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-no.svg" alt="">
+                <div class="info">
+                    <div class="rating">
+                        <div class="stars" id="stars">
+                            <!-- stars -->
                         </div>
-                        <div class="reviewNumber">
-                            4
+                        <div class="number" id="number">
+                            
                         </div>
                     </div>
-                    <div class="reviewText">
-                        Lorem ipsum dolor sit amet consectetur 
+                    <div class="buttonContainer">
+                        <a href="#ex1" rel="modal:open">
+                            <button onclick="openProductReviewWindow()">Add Review</button>
+                        </a>  
                     </div>
                 </div>
             </div>
-            <div class="reviews">
-                <div class="review">
-                    <div class="reviewRating">
-                        <div class="reviewStars">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-no.svg" alt="">
-                            <img src="../img/star-no.svg" alt="">
-                        </div>
-                        <div class="reviewNumber">
-                            3
-                        </div>
-                    </div>
-                    <div class="reviewText">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iusto est beatae obcaecati soluta ea quae impedit eaque esse, reiciendis, facere sequi numquam deserunt nemo iure illo quaerat vitae? Ad!
-                    </div>
-                </div>
-            </div>
-            <div class="reviews">
-                <div class="review">
-                    <div class="reviewRating">
-                        <div class="reviewStars">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                            <img src="../img/star-yes.svg" alt="">
-                        </div>
-                        <div class="reviewNumber">
-                            5
-                        </div>
-                    </div>
-                    <div class="reviewText">
-                        Lorem ipsum dolor 
-                    </div>
+            <div class="divider"></div>
+            <div class="reviewsContainer">
+                <h3>Reviews</h3>
+                <div class="reviews" id="reviews">
+                    <!-- reviews -->
                 </div>
             </div>
         </div>
-    </div>
-</body>
+        <!-- jQuery    -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <!-- jQuery Modal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <!-- my js -->
+        <script src="../main.js"></script>
+        <script src="./index.js"></script>
+
+        <div id="ex1" class="modal">
+            <div class="reviewModal">
+                <div class="userRatingHeader">
+                    <h1>What's your rating?</h1>
+                </div>
+                <form id="userRatingForm"></form>
+                <div class="userRatingContent">
+                    <div class="userRating">
+                        <h3>Rating</h3>
+                        <div id="userRatingStars" class="userRatingStars">
+                            <img src="../img/star.svg" class="grayStar userRatingStar" alt="">
+                            <img src="../img/star.svg" class="grayStar userRatingStar" alt="">
+                            <img src="../img/star.svg" class="grayStar userRatingStar" alt="">
+                            <img src="../img/star.svg" class="grayStar userRatingStar" alt="">
+                            <img src="../img/star.svg" class="grayStar userRatingStar" alt="">
+                        </div>
+                    </div>
+                    <div class="userReview">
+                        <h3>Review</h3>
+                        <textarea name="comment" form="userRatingForm" placeholder="Review..." id="review"></textarea>
+                    </div>
+                    <div class="error dontShow" id="error">
+                        Please enter a review. 
+                    </div>
+                    <a href="" class="close" rel="modal:close"></a>
+                    <input type="submit" value="Submit" class="submit" onclick="submitRatingForm()">
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,74 @@
+/* COLORS */
+/* DARKEST: #121212 */
+/* DARK: #212121 */
+/* MIDDLE: #424242 */
+/* LIGHT: #797979 */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #121212;
+}
+
+a {
+    text-decoration: none; /* no underline */
+}
+
+.card {
+    margin: 2rem auto;
+    max-width: 680px;
+    padding: 3rem 3rem 3rem 6rem;
+    background-color: #212121;
+    border-radius: 5px;
+}
+
+.productListing {
+    background-color: #424242;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.grayStar {
+    filter: grayscale(100%);
+}
+
+.ratingStars img{
+    height: 1.2rem;
+    padding: 2px;
+}
+
+.number {
+    font-size: 1.8rem;
+}
+
+.rating {
+    display: flex;
+}
+
+.homeRating div{
+    padding: .6rem;
+}
+
+.productListing {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .number {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .productListing {
+        display: block;
+    }
+}
