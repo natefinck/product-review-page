@@ -67,7 +67,7 @@ function onload() {
     products.forEach(product => {
         rating = getAverageRating(product);
         $productContainer.append(
-            '<a href="/product/index.html?product=' + index + '">' +
+            '<a href="/product-review-page/src/product/index.html?product=' + index + '">' +
                 '<div class="productListing">' + 
                     '<div class="title">' +
                         '<h3>' +
